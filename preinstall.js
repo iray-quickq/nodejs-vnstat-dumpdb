@@ -3,12 +3,12 @@ var exec = require ('child_process') .exec;
 var bin = process.env.NODE_APP_BIN || 'vnstat';
 
 exec (bin + ' --version', function (err, res) {
+  return;
   if (err) {
     throw err;
   }
 
   res.replace (/^vnStat (\d+)\.(\d+) /, function (s, major, minor) {
-    return;
     if (major >= 1 && minor >= 13) {
       return;
     }
