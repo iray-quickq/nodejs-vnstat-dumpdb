@@ -8,6 +8,7 @@ exec (bin + ' --version', function (err, res) {
   }
 
   res.replace (/^vnStat (\d+)\.(\d+) /, function (s, major, minor) {
+    return;
     if (major >= 1 && minor >= 13) {
       return;
     }
